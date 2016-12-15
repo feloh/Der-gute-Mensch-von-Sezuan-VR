@@ -18,6 +18,8 @@
     <a-assets>
         <!--Wolken-->
         <img id="wolken" src="img/sky_jsvis.png">
+        <!--Stadttor-->
+        <a-asset-item id="stadttor" src="obj/stadttor.obj"></a-asset-item>
         <!--Häuser-->
         <a-asset-item id="house1" src="obj/haus1.obj"></a-asset-item>
         <a-asset-item id="house2" src="obj/haus2.obj"></a-asset-item>
@@ -41,38 +43,35 @@
         <audio id="introwt18" src="ton/prolog_1_3_8g1.mp3"></audio>
     </a-assets>
 
-    <!--Hintergrundton-->
-
-    <a-entity sound="src: #volkanMusik; autoplay: true; loop:true; volume: 3;"></a-entity>
-    <!---->
-    <!--Man kann den Ton auch an Objekte hängen (also für uns die Häuser vielleicht gut) und das der Ton z.B. erst auf Klick des Hauses losgeht-->
-    <!---->
-
-    <!--Dialoge-->
-    <!-- Intro -->
-    <!-- Wasserträger -->
-    <a-sound id ="nar1" src="#introwt11" autoplay="true" play-next-sound ="#nar2"></a-sound>
-    <a-sound id ="nar2" src="#introwt12" autoplay="false" play-next-sound ="#nar3"></a-sound>
-    <!-- Arbeiter-->
-    <a-sound id ="nar3" src="#introwt13" autoplay="false" play-next-sound ="#nar4"></a-sound>
-    <!-- Schreiber-->
-    <a-sound id ="nar4" src="#introwt14" autoplay="false" play-next-sound ="#nar5"></a-sound>
-    <!-- Prügler-->
-    <a-sound id ="nar5" src="#introwt15" autoplay="false" play-next-sound ="#nar6"></a-sound>
-
-    <a-sound id ="nar6" src="#introwt16" autoplay="false" play-next-sound ="#nar7"></a-sound>
-    <a-sound id ="nar7" src="#introwt17" autoplay="false" play-next-sound ="#nar8"></a-sound>
-
-    <!-- Götter-->
-    <a-sound id ="nar8" src="#introwt18" autoplay="false" play-next-sound ="#nar1"></a-sound>
-
-
     <!--Kamera-->
     <a-entity id="kamera"
-              position ="0 20 120"
+              position ="0 102 7"
+              rotation ="-90 0 0"
               camera
               look-controls>
-        <a-animation attribute="position" from="0 20 120" to="0 6 10" delay="0" dur="50000"></a-animation>
+        <a-animation attribute="position" from="0 102 7" to="0 20 80" delay="0" dur="60000"></a-animation>
+        <a-animation attribute="rotation" from="-90 0 0" to="0 0 0" delay="60000" dur="10000"></a-animation>
+        <a-animation attribute="position" from="0 20 80" to="0 6 10" delay="60000" dur="60000"></a-animation>
+        <!--Ton-->
+        <!--Man kann den Ton auch an Objekte hängen (also für uns die Häuser vielleicht gut) und das der Ton z.B. erst auf Klick des Hauses losgeht-->
+        <!---->
+        <!--Hintergrundton-->
+        <a-entity id="hintergrundmusik" sound="src: #volkanMusik; autoplay: true; loop:true; volume: 35;"></a-entity>
+        <!--Dialoge-->
+        <!-- Intro -->
+        <!-- Wasserträger -->
+        <a-sound id ="nar1" src="#introwt11" autoplay="true" play-next-sound ="#nar2" volume="30"></a-sound>
+        <a-sound id ="nar2" src="#introwt12" autoplay="false" play-next-sound ="#nar3" volume="30"></a-sound>
+        <!-- Arbeiter-->
+        <a-sound id ="nar3" src="#introwt13" autoplay="false" play-next-sound ="#nar4" volume="30"></a-sound>
+        <!-- Schreiber-->
+        <a-sound id ="nar4" src="#introwt14" autoplay="false" play-next-sound ="#nar5" volume="30"></a-sound>
+        <!-- Prügler-->
+        <a-sound id ="nar5" src="#introwt15" autoplay="false" play-next-sound ="#nar6" volume="30"></a-sound>
+        <a-sound id ="nar6" src="#introwt16" autoplay="false" play-next-sound ="#nar7" volume="30"></a-sound>
+        <a-sound id ="nar7" src="#introwt17" autoplay="false" play-next-sound ="#nar8" volume="30"></a-sound>
+        <!-- Götter-->
+        <a-sound id ="nar8" src="#introwt18" autoplay="false"></a-sound>
     </a-entity>
 
     <!--Raum-->
@@ -144,48 +143,100 @@
     <!--HG1-->
     <!--Herr Fo's Haus-->
     <!--Streng, Nur bedienstete zuhause-->
-    <a-entity id="FosHaus"
-              geometry="primitive: box; width: 7; height: 0.2; depth: 12"
-              material="color: #000000"
-              position ="-8.5 0 -3"
-              scale ="1.5 1 2">
-        <!--<a-animation attribute="geometry.height" from="0.2" to="150" delay="10000" dur="10000"></a-animation>-->
+    <a-entity id="FosHaus">
+        <a-entity id="fo_w1"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
+                  rotation=" 0 0 0"
+                  position ="-3.5 0 -2.5"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="fo_w2"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
+                  rotation="0 0 0"
+                  position ="-13.5 0 -2.5"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="fo_w3"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+                  rotation=" 0 90 0"
+                  position ="-8.6 0 9.8"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="fo_w4"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+                  rotation=" 0 90 0"
+                  position ="-8.6 0 -14.8"
+                  material="color: #000000">
+        </a-entity>
+        <!--<a-animation attribute="scale" from="1 1 1" to="1 1000 1" delay="0" dur="10000"></a-animation>-->
     </a-entity>
-    <a-entity id="FosHaus-Innen"
-              geometry="primitive: box; width: 6.5; height: 0.201; depth: 11.5"
-              material="color: #ffffff"
-              position ="-8.5 0 -3"
-              scale ="1.5 1 2"></a-entity>
+
 
     <!--HG2-->
     <!--Witwe Su's Hause-->
     <!--Kleines, unaufgeräumtes Zimmer mit Spinnen-->
-    <a-entity id="SusHaus"
-              geometry="primitive: box; width: 7; height: 0.2; depth: 6"
-              material="color: #000000"
-              position ="-7 0 24">
-        <!--<a-animation attribute="geometry.height" from="0.2" to="150" delay="20000" dur="10000"></a-animation>-->
+    <a-entity id="SusHaus">
+        <a-entity id="su_w1"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 8"
+                  rotation=" 0 0 0"
+                  position ="-3.5 0 24.5"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="su_w2"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 8"
+                  rotation="0 0 0"
+                  position ="-13.5 0 24.5"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="su_w3"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+                  rotation=" 0 90 0"
+                  position ="-8.6 0 28.3"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="su_w4"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+                  rotation=" 0 90 0"
+                  position ="-8.6 0 20.7"
+                  material="color: #000000">
+        </a-entity>
+        <!--<a-animation attribute="scale" from="1 1 1" to="1 1000 1" delay="0" dur="10000"></a-animation>-->
     </a-entity>
-    <a-entity id="SusHaus-Innen"
-              geometry="primitive: box; width: 6.5; height: 0.201; depth: 5.5"
-              material="color: #ffffff"
-              position ="-7 0 24"></a-entity>
 
     <!--HG3-->
     <!--Herr Tsheng's Haus-->
     <!--"Verschone mih mit deinen Göttern"-->
     <!--Haus voll Verwandtschaft-->
     <!--Böse Verwandtschaft-->
-    <a-entity id="TshengsHaus"
-              geometry="primitive: box; width: 14; height: 0.2; depth: 13"
-              material="color: #000000"
-              position ="-27 0 9">
-        <a-animation attribute="geometry.height" from="0.2" to="150" delay="30000" dur="10000"></a-animation>
+    <a-entity id="TshengsHaus">
+        <a-entity id="tsh_w1"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                  rotation=" 0 0 0"
+                  position ="-34.8 0 10.7"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="ths_w2"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                  rotation="0 0 0"
+                  position ="-15.2 0 10.7"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="tsh_w3"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                  rotation=" 0 90 0"
+                  position ="-25 0 6"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="tsh_w4"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                  rotation=" 0 90 0"
+                  position ="-25 0 15"
+                  material="color: #000000">
+        </a-entity>
+        <!--<a-animation attribute="scale" from="1 1 1" to=" 1 1000 1" delay="0" dur="10000"></a-animation>-->
     </a-entity>
-    <a-entity id="TshengsHaus-Innen"
-              geometry="primitive: box; width: 13.5; height: 0.2009; depth: 12.5"
-              material="color: #ffffff"
-              position ="-27 0 9"></a-entity>
+
+
     <!--??Flut??-->
     <!--Gespräch über Flut-->
     <!--???Straßen werden langsam mit Wasser geflutet???-->
@@ -214,16 +265,37 @@
     <!--Mann ab-->
     <!--Tabakladen zieht sich zu-->
     <!---->
+    <!--HG4-->
+    <!--Tabakladen-->
     <a-entity id="Tabakladen"
-              geometry="primitive: box; width: 16; height: 0.2; depth: 10"
-              material="color: #000000"
-              position ="11.5 0 -15.5">
-        <!--<a-animation attribute="geometry.height" from="0.2" to="150" delay="40000" dur="10000"></a-animation>-->
+              position="31.8 0 -25.5"
+              scale="0.8 1 1" >
+        <a-entity id="tab_w1"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                  rotation=" 0 0 0"
+                  position ="-34.8 0 10.7"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="tab_w2"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                  rotation="0 0 0"
+                  position ="-15.2 0 10.7"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="tab_w3"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                  rotation=" 0 90 0"
+                  position ="-25 0 6"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="tab_w4"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                  rotation=" 0 90 0"
+                  position ="-25 0 15"
+                  material="color: #000000">
+        </a-entity>
+        <!--<a-animation attribute="scale" from="0.8 1 1" to="0.7 1000 1" delay="0" dur="10000"></a-animation>-->
     </a-entity>
-    <a-entity id="Tabakladen-Innen"
-              geometry="primitive: box; width: 15.5; height: 0.201; depth: 9.5"
-              material="color: #ffffff"
-              position ="11.5 0 -15.5"></a-entity>
 
     <!--HG5-->
     <!--Shen Te's Haus-->
@@ -233,58 +305,80 @@
     <!---->
     <!---->
     <a-entity id="ShenTesHaus"
-              geometry="primitive: box; width: 14; height: 0.2; depth: 10"
-              material="color: #000000"
-              position ="20 0 50"></a-entity>
-    <a-entity id="ShenTesHaus-Innen"
-              geometry="primitive: box; width: 13.5; height: 0.201; depth: 9.5"
-              material="color: #ffffff"
-              position ="20 0 50"></a-entity>
+              position="37.7 0 37.7"
+              scale="0.7 1 1.2" >
+        <a-entity id="shen_w1"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                  rotation=" 0 0 0"
+                  position ="-34.8 0 10.7"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="shen_w2"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                  rotation="0 0 0"
+                  position ="-15.2 0 10.7"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="shen_w3"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                  rotation=" 0 90 0"
+                  position ="-25 0 6"
+                  material="color: #000000">
+        </a-entity>
+        <a-entity id="shen_w4"
+                  geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                  rotation=" 0 90 0"
+                  position ="-25 0 15"
+                  material="color: #000000">
+        </a-entity>
+        <!--<a-animation attribute="scale" from="0.7 1 1.2" to="0.7 1000 1.2" delay="0" dur="10000"></a-animation>-->
+    </a-entity>
+
 
     <!--Straßen-Grundriss-->
     <!--Hauptstraße-->
     <a-entity id="hauptstraße-1"
-              geometry="primitive: box; width: 0.02; height: 0.02; depth: 150"
+              geometry="primitive: box; width: 0.1; height: 0.1; depth: 150"
               material="color: #000000"
               position ="-3 0 0"></a-entity>
     <a-entity id="hauptstraße-2"
-              geometry="primitive: box; width: 0.02; height: 0.02; depth: 150"
+              geometry="primitive: box; width: 0.1; height: 0.1; depth: 150"
               material="color: #000000"
               position ="3 0 0"></a-entity>
     <!--Seitenstraße-1-V-->
     <a-entity id="seitenstraße-1.1"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="38 0 -10"></a-entity>
     <a-entity id="seitenstraße-1.2"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="38 0 -6"></a-entity>
     <!--Seitenstraße-2-V-->
     <a-entity id="seitenstraße-2.1"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="-38 0 -20"></a-entity>
     <a-entity id="seitenstraße-2.2"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="-38 0 -16"></a-entity>
     <!--Seitenstraße-3-H-->
     <a-entity id="seitenstraße-3.1"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="38 0 40"></a-entity>
     <a-entity id="seitenstraße-3.2"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="38 0 44"></a-entity>
     <!--Seitenstraße-4-H-->
     <a-entity id="seitenstraße-4.1"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="-38 0 20"></a-entity>
     <a-entity id="seitenstraße-4.2"
-              geometry="primitive: box; width: 70; height: 0.05; depth: 0.02"
+              geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
               material="color: #000000"
               position ="-38 0 16"></a-entity> <!--Ende Straßen-->
     <!---->
@@ -317,7 +411,7 @@
     <a-entity id="random-haus7"
               obj-model="obj: #house5"
               scale="0.01 0.01 0.01"
-              position="-20 3 24.5"
+              position="-21.5 3 24.5"
               rotation="0 270 0"></a-entity>
     <a-entity id="random-haus8"
               obj-model="obj: #house1"
@@ -380,6 +474,14 @@
               position="-50 3 27"
               rotation="0 180 0"></a-entity>
 
+    <!--Stadttor-->
+    <!--<a-entity id="stadttor_init"-->
+              <!--obj-model="obj: #stadttor"-->
+              <!--scale="0.01 0.013 0.01"-->
+              <!--position="-5 4 68"-->
+              <!--rotation="0 0 0"></a-entity>-->
+    <!--Ich finde es passt nicht so, wenns euch gefällt kann man es ja aktivieren-->
+
 
     <!--Figuren-->
     <!---->
@@ -395,9 +497,8 @@
     </a-entity>
     <!--Wasserträger - Wang-->
     <a-entity id="wassertraeger" collada-model="#wasserFigur" scale="2 2 2" color="white" position ="0 0 85" rotation="0 180 0">
-        <a-animation attribute="position" from="0 0 85" to="0 0 5" delay="500" dur="50000"></a-animation>
-        <a-animation attribute="rotation" direction="alternate" from="0 180 -4" to="0 180 4" delay="500" dur="1500" repeat="50"></a-animation>
-        </a-animation>
+        <a-animation attribute="position" from="0 0 85" to="0 0 5" delay="500" dur="130000"></a-animation>
+        <a-animation attribute="rotation" direction="alternate" from="0 180 -4" to="0 180 4" delay="500" dur="1500" repeat="100"></a-animation>
     </a-entity>
 </a-scene>
 </body>
