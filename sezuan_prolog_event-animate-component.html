@@ -66,7 +66,7 @@
   <!--position ="0 102 7"-->
   <a-entity id="kamera"
             position ="0 6 10"
-
+            wasd-controls=""
             rotation ="-90 0 0"
             camera=""
             look-controls="">
@@ -170,12 +170,12 @@
   <!--Herr Fo's Haus-->
   <!--Streng, Nur bedienstete zuhause-->
   <a-entity id="FosHaus">
-    <a-animation attribute="scale" begin="anim1" to="1 1000 1" dur="7000"></a-animation>
+    <a-animation attribute="scale" begin="FosAnim" to="1 1000 1" dur="7000"></a-animation>
     <a-box geometry="primitive:box;depth:24;height:4;width:10"
            position="-8.46 2.14 -2.29"
            id="hitbox1"
            material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
-           event-animate="target:#FosHaus; aevent:anim1"></a-box>
+           event-animate="target:#FosHaus; aevent:FosAnim"></a-box>
 
     <a-entity id="fo_w1"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
@@ -254,6 +254,12 @@
   <!--Witwe Su's Hause-->
   <!--Kleines, unaufgeräumtes Zimmer mit Spinnen-->
     <a-entity id="SusHaus">
+      <a-animation attribute="scale" begin="SusAnim" to="1 1000 1" dur="7000"></a-animation>
+      <a-box geometry="primitive:box;depth:7;height:4;width:10"
+             position="-8.46 2.14 24.61"
+             id="hitbox2"
+             material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+             event-animate="target:#SusHaus; aevent:SusAnim" ></a-box>
       <a-entity id="su_w1"
                 geometry="primitive: box; height: 0.2; width: 0.4; depth: 8"
                 rotation=" 0 0 0"
@@ -324,6 +330,13 @@
   <!--Haus voll Verwandtschaft-->
   <!--Böse Verwandtschaft-->
   <a-entity id="TshengsHaus">
+    <a-animation attribute="scale" begin="TshengsAnim" to="1 1000 1" dur="7000"></a-animation>
+    <a-box geometry="primitive:box;depth:19;height:4;width:9"
+           position="-24.77 2.14 10.34"
+           id="hitbox3"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           rotation="0 90 0"
+           event-animate="target:#TshengsHaus; aevent:TshengsAnim"></a-box>
     <a-entity id="tsh_w1"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
               rotation=" 0 0 0"
@@ -467,6 +480,12 @@
   <a-entity id="Tabakladen"
             position="31.8 0 -25.5"
             scale="0.8 1 1" >
+    <a-animation attribute="scale" begin="TabakAnim" to="0.8 1000 1" dur="7000"></a-animation>
+    <a-box geometry="primitive:box;depth:6;height:4;width:19"
+           position="-24.97 2.14 11.65"
+           id="hitbox4"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           event-animate="target:#Tabakladen; aevent:TabakAnim"></a-box>
     <a-entity id="tab_w1"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
               rotation=" 0 0 0"
@@ -561,6 +580,12 @@
   <a-entity id="ShenTesHaus"
             position="37.7 0 37.7"
             scale="0.7 1 1.2" >
+    <a-animation attribute="scale" begin="ShenTeAnim" to="0.7 1000 1.2" dur="7000"></a-animation>
+    <a-box geometry="primitive:box;depth:8;height:4;width:19"
+           position="-25.46 2.14 10.24"
+           id="hitbox5"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           event-animate="target:#ShenTesHaus; aevent:ShenTeAnim"></a-box>
     <a-entity id="shen_w1"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
               rotation=" 0 0 0"
