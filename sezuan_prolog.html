@@ -42,13 +42,15 @@
     <a-asset-item id="tisch" src="obj/tisch.obj"></a-asset-item>
     <a-asset-item id="tischchen" src="obj/tischchen.obj"></a-asset-item>
     <a-asset-item id="zuber" src="obj/zuber.obj"></a-asset-item>
-    <a-asset-item id="kasse" src="obj/kasse.obj"></a-asset-item>
     <!--Götter-->
     <a-asset-item id="gottFigur" src="dae/Gott.dae"></a-asset-item>
     <!--Wasserträger-->
     <a-asset-item id="wasserFigur" src="dae/Wassertrager.dae"></a-asset-item>
     <!--Standard Mann-->
     <a-asset-item id="standardperson" src="charaktere/Standard Person.dae"></a-asset-item>
+    <!--Shantee -->
+    <a-asset-item id="shantee" src="charaktere/shantee.dae"></a-asset-item>
+
     <!--Ton - Volkan Saz-->
     <audio id="volkanMusik" src="ton/volkanSaz01.mp3"></audio>
     <!--Ton - Dialoge-->
@@ -532,12 +534,6 @@
               scale="0.1 0.06 0.2"
               rotation="0 -90 0">
     </a-entity>
-    <a-entity id="kasse"
-              obj-model="obj: #kasse"
-              position="-0.13 2.29 -0.38"
-              scale="0.1 0.008 0.008"
-              rotation="0 0 0">
-    </a-entity>
   </a-entity>
 
 
@@ -612,6 +608,19 @@
               position="0.73 0.201 2.97"
               scale="0.03 0.03 0.03"
               rotation="0 -90 0">
+    </a-entity>
+    <!--Shantee Model-->
+    <a-entity id="shenteemodel" collada-model="#shantee" scale="2 2 2" color="white" position="1.82 0 -1.35" rotation="0 180 0">
+      <a-animation attribute="rotation"
+                   dur="6"
+                   fill="forwards"
+                   from="0 -90 -5"
+                   to="0 -90 5"
+                   repeat="indefinite"></a-animation>
+      <a-animation attribute="position" from="-3.5 0 -1.35" to="6 0 -1.35" delay="0" dur="1000" repeat="indefinite" direction="reverse"></a-animation>
+
+
+    </a-entity>
     </a-entity>
   </a-entity>
 
