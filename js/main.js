@@ -11,40 +11,46 @@ AFRAME.registerComponent('play-next-sound', {
     }
 });
 
-
-AFRAME.registerComponent('event-animate', {
+AFRAME.registerComponent('sound-event-animate', {
     schema: {
-        target: { type: 'selector' },
-        aevent: {default: 'anim1'}
+        aevent: {default: 'soundanim1'},
+
+        target: { parse:function(value){
+              return document.getElementsByClassName(value);
+
+        } }
     },
 
     init: function () {
 
         var data = this.data;
 
-        this.el.addEventListener('click', function () {
+        this.el.addEventListener('sound-ended', function () {
+            for (var i=0; i<4; i++)
+                data.target[i].emit(data.aevent);
+        });
+    }
+});
+
+
+
+AFRAME.registerComponent('event-animate', {
+    schema: {
+        target: {type: 'selector'},
+        aevent: {default: 'animation1'},
+        triggeraction: {default: 'click' }
+    },
+
+    init: function() {
+
+        var data= this.data;
+
+        this.el.addEventListener(data.triggeraction, function () {
             data.target.emit(data.aevent);
         });
     }
 });
 
 
-/*
-AFRAME.registerComponent('scale-on-mouseenter', {
-    schema: {
-        target: { type: 'selector' },
-        to:     { default: '1 1000 1' }
-    },
-
-    init: function () {
-        //var target = this.data;
-        var data = this.data;
-
-        this.el.addEventListener('click', function () {
-            data.target.setAttribute('scale', data.to );
-        });
-    }
-});
-*/
 
 
