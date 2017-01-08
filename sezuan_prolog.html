@@ -48,6 +48,9 @@
     <a-asset-item id="wasserFigur" src="dae/Wassertrager.dae"></a-asset-item>
     <!--Standard Mann-->
     <a-asset-item id="standardperson" src="charaktere/Standard Person.dae"></a-asset-item>
+    <!--Standard Frau-->
+    <a-asset-item id="standardfrau" src="charaktere/StandardFrau.dae"></a-asset-item>
+
     <!--Shantee -->
     <a-asset-item id="shantee" src="charaktere/shantee.dae"></a-asset-item>
 
@@ -270,6 +273,7 @@
                 position ="-8.6 0 20.7"
                 material="color: #000000">
       </a-entity>
+
     </a-entity>
     <a-entity id="SusHaus-Innen"
             position ="-7 0 24">
@@ -307,6 +311,13 @@
                 scale="0.05 0.05 0.05"
                 rotation="0 42.26 0">
         <a-entity light="angle:78.46000000000001;color:#e98907;groundColor:#f31212;decay:3.64;distance:9.3;intensity:2.68;penumbra:0.48;type:spot" position="3.27 6.66 -4.40" rotation="32.36 -51.30 4.59" scale="1.66 0.46 -0.72"></a-entity>
+      </a-entity>
+      <a-entity id="SuModel" collada-model="#standardfrau" scale="2 2 2" color="white" position="-1 0 0" rotation="0 180 0">
+
+        <a-animation attribute="position" from="-1 0 0" to="-1 0 3" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
+        <a-animation attribute="rotation" from="0 0 0" to="0 180 0" direction="alternate" delay="12000" dur="1000" repeat="indefinite" ></a-animation>
+
+
       </a-entity>
     </a-entity>
 
@@ -610,17 +621,7 @@
               rotation="0 -90 0">
     </a-entity>
     <!--Shantee Model-->
-    <a-entity id="shenteemodel" collada-model="#shantee" scale="2 2 2" color="white" position="1.82 0 -1.35" rotation="0 180 0">
-      <a-animation attribute="rotation"
-                   dur="6"
-                   fill="forwards"
-                   from="0 -90 -5"
-                   to="0 -90 5"
-                   repeat="indefinite"></a-animation>
-      <a-animation attribute="position" from="-3.5 0 -1.35" to="6 0 -1.35" delay="0" dur="1000" repeat="indefinite" direction="reverse"></a-animation>
 
-
-    </a-entity>
     </a-entity>
   </a-entity>
 
