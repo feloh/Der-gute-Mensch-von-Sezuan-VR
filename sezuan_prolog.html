@@ -50,10 +50,12 @@
     <a-asset-item id="standardperson" src="charaktere/Standard Person.dae"></a-asset-item>
     <!--Standard Frau-->
     <a-asset-item id="standardfrau" src="charaktere/StandardFrau.dae"></a-asset-item>
-
     <!--Shantee -->
     <a-asset-item id="shantee" src="charaktere/shantee.dae"></a-asset-item>
-
+    <!--Man Dick-->
+    <a-asset-item id="manndick" src="charaktere/MannDick.dae"></a-asset-item>
+    <!--Person Kniend-->
+    <a-asset-item id="Personkniend" src="charaktere/Standard Person kniend.dae"></a-asset-item>
     <!--Ton - Volkan Saz-->
     <audio id="volkanMusik" src="ton/volkanSaz01.mp3"></audio>
     <!--Ton - Dialoge-->
@@ -240,6 +242,20 @@
               obj-model="obj: #regalr"
               position=" -1 0.201 -2.33"
               scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="FoDiener"
+              collada-model="#Personkniend"
+              scale="1.68 1.68 1.53"
+              color="white"
+              position="1.59 -0.36 -3.01"
+              rotation="0 90.52733163067008 0">
+    </a-entity>
+    <a-entity id="FoDiener2" collada-model="#standardfrau" scale="2 2 2" color="white" position="-1 0 0" rotation="0 180 0">
+
+      <a-animation attribute="position" from="-1 0 -1" to="-1 0 2" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
+      <a-animation attribute="rotation" from="0 0 0" to="0 180 0" direction="alternate" delay="12000" dur="1000" repeat="indefinite" ></a-animation>
+
+
     </a-entity>
   </a-entity>
 
@@ -434,6 +450,48 @@
       </a-entity>
     </a-entity>
 
+    <a-entity id="Tscheng"
+              collada-model="#standardperson"
+              scale="2 2 2"
+              color="white"
+              position="6.14 0 3.78"
+              rotation="0 69.32789321082961 0">
+    </a-entity>
+    <a-entity id="Tscheng2"
+              collada-model="#standardperson"
+              scale="2 2 2"
+              color="white"
+              position="4.9 0 0.02"
+              rotation="0 69.33 0">
+    </a-entity>
+    <a-entity id="TschengBett1"
+              collada-model="#standardperson"
+              scale="1.2 1.2 1.09"
+              color="white"
+              position="0.89 1.36 3.91"
+              rotation="-64.74423084978302 90 90.52733163067008">
+    </a-entity>
+    <a-entity id="TschengBett2"
+              collada-model="#standardperson"
+              scale="1.2 1.2 1.09"
+              color="white"
+              position="-0.33 1.36 3.91"
+              rotation="-64.74423084978302 90 90.52733163067008">
+    </a-entity>
+    <a-entity id="PersonKniend"
+              collada-model="#Personkniend"
+              scale="1.68 1.68 1.53"
+              color="white"
+              position="2.82 -0.36 1.3"
+              rotation="0 177.6169164905552 0.5729577951308232">
+    </a-entity>
+    <a-entity id="Tscheng3"
+              collada-model="#standardperson"
+              scale="2 2 2"
+              color="white"
+              position="10.92 0 2.43"
+              rotation="0 69.33 0">
+    </a-entity>
   </a-entity>
 
 
@@ -622,7 +680,16 @@
     </a-entity>
     <!--Shantee Model-->
 
+
+
     </a-entity>
+  <a-entity id="shantee" collada-model="#shantee" scale="2 2 2" color="white" position="17 0 48" rotation="0 90 0">
+
+    <a-animation attribute="position" from="17 0 48" to="25 0 48" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
+    <a-animation attribute="rotation" from="0 90 0" to="0 -90 0" direction="alternate" delay="12000" dur="1000" repeat="indefinite" ></a-animation>
+
+
+  </a-entity>
   </a-entity>
 
 
