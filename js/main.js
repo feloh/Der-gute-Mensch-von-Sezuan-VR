@@ -1,3 +1,7 @@
+//Global values, wichtig für Reihenfolge der Events!!
+var globalticker = 0;
+
+
 AFRAME.registerComponent('play-next-sound', {
     schema: {type: 'selector'},
 
@@ -18,7 +22,8 @@ AFRAME.registerComponent('sound-event-animate', {
         target: { parse:function(value){
               return document.getElementsByClassName(value);
 
-        } }
+        } },
+        targetbyid: {type: 'selector'}
     },
 
     init: function () {
@@ -29,6 +34,10 @@ AFRAME.registerComponent('sound-event-animate', {
             for (var i=0; i<4; i++)
                 data.target[i].emit(data.aevent);
         });
+
+        this.el.addEventListener('sound-ended', function () {
+                data.targetbyid.emit(data.aevent);
+        });
     }
 });
 
@@ -37,6 +46,7 @@ AFRAME.registerComponent('sound-event-animate', {
 AFRAME.registerComponent('event-animate', {
     schema: {
         target: {type: 'selector'},
+        target2: {type: 'selector'},
         aevent: {default: 'animation1'},
         triggeraction: {default: 'click' }
     },
@@ -47,6 +57,7 @@ AFRAME.registerComponent('event-animate', {
 
         this.el.addEventListener(data.triggeraction, function () {
             data.target.emit(data.aevent);
+            data.target2.emit(data.aevent);
         });
     }
 });
