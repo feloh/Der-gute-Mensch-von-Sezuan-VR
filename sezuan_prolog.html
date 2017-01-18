@@ -67,6 +67,12 @@
     <audio id="introwt16" src="ton/prolog_1_3_6wm6.mp3"></audio>
     <audio id="introwt17" src="ton/prolog_1_3_7wm7.mp3"></audio>
     <audio id="introwt18" src="ton/prolog_1_3_8g1.mp3"></audio>
+    <audio id="introwt19" src="ton/prolog_1_3_9wm8.mp3"></audio>
+    <audio id="introwt20" src="ton/prolog_1_3_10_g2.mp3"></audio>
+    <audio id="introwt21" src="ton/prolog_1_3_11wm9.mp3"></audio> <!--'wo wünscht ihr zu wohnen? -->
+    <audio id="introwt22" src="ton/prolog_1_3_12g3.mp3"></audio>
+    <audio id="introwt23" src="ton/prolog_1_4_1wm1.mp3"></audio> <!-- "geduldet euch einen Augenblick""-->
+    <audio id="introwt24" src="ton/prolog_1_4_2wm2.mp3"></audio><!-- Klopfen und wand hoch Fo's Haus -->
   </a-assets>
 
   <!--Kamera-->
@@ -75,8 +81,10 @@
             rotation ="-90 0 0"
             camera
             look-controls>
+    <a-cursor></a-cursor>
     <a-animation attribute="position" from="0 102 7" to="0 20 80" delay="0" dur="60000"></a-animation>
     <a-animation attribute="position" from="0 20 80" to="0 6 10" delay="60000" dur="60000"></a-animation>
+  </a-entity>
     <!--Ton-->
     <!--Man kann den Ton auch an Objekte hängen (also für uns die Häuser vielleicht gut) und das der Ton z.B. erst auf Klick des Hauses losgeht-->
     <!---->
@@ -96,8 +104,15 @@
     <a-sound id ="nar6" src="#introwt16" autoplay="false" play-next-sound ="#nar7" volume="30"></a-sound>
     <a-sound id ="nar7" src="#introwt17" autoplay="false" play-next-sound ="#nar8" volume="30"></a-sound>
     <!-- Götter-->
-    <a-sound id ="nar8" src="#introwt18" autoplay="false"></a-sound>
-  </a-entity>
+    <a-sound id ="nar8" src="#introwt18" autoplay="false" play-next-sound ="#nar9" volume="30"></a-sound>
+    <a-sound id ="nar9" src="#introwt19" autoplay="false" play-next-sound ="#nar10" volume="30"></a-sound>
+    <a-sound id ="nar10" src="#introwt20" autoplay="false" play-next-sound ="#nar11" volume="30"></a-sound>
+    <a-sound id ="nar11" src="#introwt21" autoplay="false" play-next-sound ="#nar12" volume="30"></a-sound>
+    <a-sound id ="nar12" src="#introwt22" autoplay="false" play-next-sound ="#nar13" volume="30"></a-sound>
+    <a-sound id ="nar13" src="#introwt23" autoplay="false"  volume="30"
+              sound-event-animate="target:fo_wall; targetbyid:#hitbox1; aevent:fowallblink"></a-sound>  <!-- "geduldet euch einen Augenblick""-->
+    <a-sound id ="nar14" src="#introwt24" autoplay="false" on="FosAnim"  volume="30"></a-sound><!-- Klopfen und wand hoch Fo's Haus -->
+
 
   <!--Raum-->
   <!---->
@@ -174,29 +189,50 @@
   <!--Herr Fo's Haus-->
   <!--Streng, Nur bedienstete zuhause-->
   <a-entity id="FosHaus">
+    <a-animation attribute="scale" begin="FosAnim" to="1 1000 1" dur="15000" delay="6000"></a-animation>
+
+    <a-box
+           geometry="primitive:box;depth:0.1;height:0.1;width:0.1"
+           position="-8.46 2.14 -2.29"
+           id="hitbox1"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           event-animate="target:#FosHaus; target2:#nar14; aevent:FosAnim">
+      <a-animation attribute="geometry.width" begin="fowallblink" from="0.1" to="10"></a-animation>
+      <a-animation attribute="geometry.height" begin="fowallblink" from="0.1" to="4"></a-animation>
+      <a-animation attribute="geometry.depth"begin="fowallblink" from="0.1" to="24" ></a-animation>
+    </a-box>
+
     <a-entity id="fo_w1"
+              class="fo_wall"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
               rotation=" 0 0 0"
               position ="-3.5 0 -2.5"
               material="color: #000000">
+      <a-animation attribute="material.color" begin="fowallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
     </a-entity>
     <a-entity id="fo_w2"
+              class="fo_wall"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
               rotation="0 0 0"
               position ="-13.5 0 -2.5"
               material="color: #000000">
+      <a-animation attribute="material.color" begin="fowallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
     </a-entity>
     <a-entity id="fo_w3"
+              class="fo_wall"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
               rotation=" 0 90 0"
               position ="-8.6 0 9.8"
               material="color: #000000">
+      <a-animation attribute="material.color" begin="fowallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
     </a-entity>
     <a-entity id="fo_w4"
+              class="fo_wall"
               geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
               rotation=" 0 90 0"
               position ="-8.6 0 -14.8"
               material="color: #000000">
+      <a-animation attribute="material.color" begin="fowallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
     </a-entity>
   </a-entity>
 
@@ -857,6 +893,7 @@
     <a-entity id="wassertraeger" collada-model="#wasserFigur" scale="2 2 2" color="white" position ="0 0 85" rotation="0 180 0">
       <a-animation attribute="position" from="0 0 85" to="0 0 5" delay="500" dur="130000"></a-animation>
       <a-animation attribute="rotation" direction="alternate" from="0 180 -4" to="0 180 4" delay="500" dur="1500" repeat="100"></a-animation>
+      <a-animation attribute="position" from="" to="" begin="" dur=""></a-animation>
     </a-entity>
 
     <!--Arbeiter-->
