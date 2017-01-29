@@ -21,6 +21,7 @@
         <a-asset-item id="house5" src="obj/haus5.obj"></a-asset-item>
         <a-asset-item id="house6" src="obj/haus6.obj"></a-asset-item>
         <!--Inventar-->
+    <!--
         <a-asset-item id="badewanne" src="obj/badewanne.obj"></a-asset-item>
         <a-asset-item id="bett" src="obj/bett.obj"></a-asset-item>
         <a-asset-item id="doppelbett" src="obj/doppelbett.obj"></a-asset-item>
@@ -37,6 +38,7 @@
         <a-asset-item id="tisch" src="obj/tisch.obj"></a-asset-item>
         <a-asset-item id="tischchen" src="obj/tischchen.obj"></a-asset-item>
         <a-asset-item id="zuber" src="obj/zuber.obj"></a-asset-item>
+        -->
         <!--Götter-->
         <a-asset-item id="gottFigur" src="dae/Gott.dae"></a-asset-item>
         <!--Wasserträger-->
@@ -283,7 +285,8 @@
   <a-entity id="FosHaus-Innen"
             position ="-8.5 0 -3"
             scale ="1.5 1 2">
-    <a-entity id="badewannefo"
+    <!--
+      <a-entity id="badewannefo"
               obj-model="obj: #badewanne"
               position="-2.57 0.201 -4.46"
               scale="0.1 0.1 0.1">
@@ -323,6 +326,7 @@
               position=" -1 0.201 -2.33"
               scale="0.04 0.07 0.03">
     </a-entity>
+    -->
     <a-entity id="FoDiener"
               collada-model="#Personkniend"
               scale="1.68 1.68 1.53"
@@ -388,7 +392,8 @@
     </a-entity>
     <a-entity id="SusHaus-Innen"
             position ="-7 0 24">
-      <a-entity id="schranksu"
+      <!--
+        <a-entity id="schranksu"
                 obj-model="obj: #schrank"
                 position="-2.59 0.201 1.12"
                 scale="0.1 0.15 0.1"
@@ -423,6 +428,7 @@
                 rotation="0 42.26 0">
         <a-entity light="angle:78.46000000000001;color:#e98907;groundColor:#f31212;decay:3.64;distance:9.3;intensity:2.68;penumbra:0.48;type:spot" position="3.27 6.66 -4.40" rotation="32.36 -51.30 4.59" scale="1.66 0.46 -0.72"></a-entity>
       </a-entity>
+      -->
       <a-entity id="SuModel" collada-model="#standardfrau" scale="2 2 2" color="white" position="-1 0 0" rotation="0 180 0">
 
         <a-animation attribute="position" from="-1 0 0" to="-1 0 3" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
@@ -484,7 +490,8 @@
   <a-entity id="TshengsHaus-Innen"
             material="color: #ffffff"
             position ="-27.75 0 8.55">
-    <a-entity id="zubertsheng"
+    <!--
+      <a-entity id="zubertsheng"
               obj-model="obj: #zuber"
               position="-1 0 -1"
               scale="0.06 0.1 0.05">
@@ -562,6 +569,7 @@
         <a-entity id="tischlicht" light="color: #CCC; angle: 88.96000000000001; distance: 3.74; intensity: 2.6799999999999997; penumbra: 0.04; type: spot; color: #fdf55e" rotation="-90 -4.60 0"></a-entity>
       </a-entity>
     </a-entity>
+
     <a-entity id="Tscheng"
               collada-model="#standardperson"
               scale="2 2 2"
@@ -590,6 +598,7 @@
               position="-0.33 1.36 3.91"
               rotation="-64.74423084978302 90 90.52733163067008">
     </a-entity>
+    -->
     <a-entity id="PersonKniend"
               collada-model="#Personkniend"
               scale="1.68 1.68 1.53"
@@ -660,6 +669,7 @@
   </a-entity>
   <a-entity id="Tabakladen-Innen"
             position ="11.5 0 -13.8">
+      <!--
     <a-entity id="regalr1tabak"
               obj-model="obj: #regalr"
               position=" -5.70 0.201 -4.48"
@@ -708,7 +718,9 @@
               scale="0.1 0.06 0.2"
               rotation="0 -90 0">
     </a-entity>
+     -->
   </a-entity>
+
 
     <!--NOCH KEINE ANIMATION UND NARRATION-->
   <!--Shen Te's Haus-->
@@ -742,6 +754,7 @@
   </a-entity>
   <a-entity id="ShenTesHaus-Innen"
             position ="20 0 50">
+      <!--
     <a-entity id="badewanneshente"
               obj-model="obj: #badewanne"
               position="-5.96 0.201 -2.81"
@@ -777,6 +790,7 @@
               scale="0.03 0.03 0.03"
               rotation="0 -90 0">
     </a-entity>
+    -->
   </a-entity>
   <!--Shente Model-->
   <a-entity id="shantee" collada-model="#shantee" scale="2 2 2" color="white" position="17 0 48" rotation="0 90 0">
