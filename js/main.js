@@ -111,6 +111,7 @@ AFRAME.registerComponent('event-animate', {
                 w2.setAttribute("class", "usedwall");
                 w3.setAttribute("class", "usedwall");
                 w4.setAttribute("class", "usedwall");
+
             }
 
             //Falls es nicht an eine hitbox geheftet wird, passiert nur das
@@ -123,9 +124,12 @@ AFRAME.registerComponent('event-animate', {
             if (data.target6) data.target6.emit(data.aevent);
             if (data.target7) data.target7.emit(data.aevent);
             if (data.target8) data.target8.emit(data.aevent);
+
+            data.target.setAttribute("used","true");
         });
     }
 });
+
 
 
 
